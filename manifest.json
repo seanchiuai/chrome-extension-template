@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Hello World Sidebar",
+  "version": "1.0.0",
+  "description": "A simple Chrome extension with a sidebar showing Hello World",
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "permissions": [
+    "sidePanel",
+    "activeTab"
+  ],
+  "action": {
+    "default_title": "Open Hello World Sidebar"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
+
